@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,104 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FoodServiceManager" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="fill" borderStyle="roundedRect" placeholder="Дейв Коуэнс" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DMx-yz-Zih">
+                                <rect key="frame" x="16" y="326" width="343" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="343" id="Bad-SL-wan"/>
+                                    <constraint firstAttribute="height" constant="30" id="PTH-du-EIS"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2q0-Ys-pV1">
+                                <rect key="frame" x="118.5" y="385" width="138" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Bfk-Ow-qpi"/>
+                                    <constraint firstAttribute="width" constant="138" id="n2x-1h-zfY"/>
+                                </constraints>
+                                <state key="normal" title="Узнать меню"/>
+                                <connections>
+                                    <action selector="findMenu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sT0-GR-uHx"/>
+                                </connections>
+                            </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите свое имя:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5cp-oF-UgF">
+                                <rect key="frame" x="87.5" y="278" width="200" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="LBK-Bg-8mo"/>
+                                    <constraint firstAttribute="width" constant="200" id="NKr-Ep-JHr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите день:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hGK-ea-n4D">
+                                <rect key="frame" x="87" y="85" width="200" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="qDZ-gz-peX"/>
+                                    <constraint firstAttribute="width" constant="200" id="zdL-Nf-g9Q"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y1l-IH-Zf8">
+                                <rect key="frame" x="0.0" y="121" width="375" height="149"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="149" id="bX8-Qa-BML"/>
+                                    <constraint firstAttribute="width" constant="375" id="dPa-nh-Cmb"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="LsE-fb-yz1"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="wE8-Oe-1jH"/>
+                                </connections>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1AM-d4-ImE">
+                                <rect key="frame" x="0.0" y="423" width="375" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="3LW-NA-HUc"/>
+                                    <constraint firstAttribute="width" constant="375" id="nFv-ue-aKm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hGK-ea-n4D" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8SF-ut-sB7"/>
+                            <constraint firstItem="1AM-d4-ImE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="C0p-qs-KBd"/>
+                            <constraint firstItem="DMx-yz-Zih" firstAttribute="top" secondItem="5cp-oF-UgF" secondAttribute="bottom" constant="27" id="CpF-0l-mUu"/>
+                            <constraint firstItem="1AM-d4-ImE" firstAttribute="top" secondItem="2q0-Ys-pV1" secondAttribute="bottom" constant="8" id="E6Y-lq-5fc"/>
+                            <constraint firstItem="5cp-oF-UgF" firstAttribute="top" secondItem="Y1l-IH-Zf8" secondAttribute="bottom" constant="8" id="Fcg-eu-Hhn"/>
+                            <constraint firstItem="hGK-ea-n4D" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="65" id="NqS-0k-Tqi"/>
+                            <constraint firstItem="Y1l-IH-Zf8" firstAttribute="top" secondItem="hGK-ea-n4D" secondAttribute="bottom" constant="15" id="QAx-LS-3Gb"/>
+                            <constraint firstItem="5cp-oF-UgF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Rhd-zl-uFV"/>
+                            <constraint firstItem="DMx-yz-Zih" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="av0-Q3-cgX"/>
+                            <constraint firstItem="Y1l-IH-Zf8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gfA-C1-YIB"/>
+                            <constraint firstItem="2q0-Ys-pV1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hEI-on-hR1"/>
+                            <constraint firstItem="2q0-Ys-pV1" firstAttribute="top" secondItem="DMx-yz-Zih" secondAttribute="bottom" constant="29" id="mVg-JB-4oi"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="chooseDayLabel" destination="hGK-ea-n4D" id="JXR-tK-cwF"/>
+                        <outlet property="dayPickerView" destination="Y1l-IH-Zf8" id="XZf-T9-YHJ"/>
+                        <outlet property="enterNameLabel" destination="5cp-oF-UgF" id="IDz-oy-heo"/>
+                        <outlet property="findMenuButton" destination="2q0-Ys-pV1" id="5FD-Qn-o03"/>
+                        <outlet property="menuLabel" destination="1AM-d4-ImE" id="nXM-XL-eFd"/>
+                        <outlet property="nameTextField" destination="DMx-yz-Zih" id="bDS-aA-WAg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="112.89355322338831"/>
         </scene>
     </scenes>
 </document>
